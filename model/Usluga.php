@@ -71,7 +71,7 @@ class Usluga {
         $podaciIzBaze = $mysqli->query("SELECT usluga_id, usluga_naziv, usluga_opis, usluga_cena, auto_servis_naziv 
                                         FROM auto_servis, usluga 
                                         WHERE auto_servis.auto_servis_id=usluga.auto_servis_id
-                                        ORDER BY usluga_id ASC");
+                                        ORDER BY usluga_naziv ASC");
         $uslugaNiz = array();
         while ($red = $podaciIzBaze->fetch_assoc()) {
             $usluga = new usluga();
@@ -91,7 +91,7 @@ class Usluga {
         $podaciIzBaze = $mysqli->query("SELECT usluga_id, usluga_naziv, usluga_opis, usluga_cena, auto_servis_naziv 
                                         FROM auto_servis, usluga 
                                         WHERE auto_servis.auto_servis_id=usluga.auto_servis_id
-                                        ORDER BY usluga_id DESC");
+                                        ORDER BY usluga_naziv DESC");
         $uslugaNiz = array();
         while ($red = $podaciIzBaze->fetch_assoc()) {
             $usluga = new usluga();
